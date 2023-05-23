@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSpring, animated, useChain, useSpringRef } from "react-spring";
 import styled, { keyframes } from 'styled-components';
-
+import logo from '../images/light3.png';
 const deleteanimation = keyframes`
 	from {
         opacity: 1;
@@ -37,22 +37,59 @@ const mining = keyframes`
         margin-left: -7.5vw;
     }
 `
+const fadein = keyframes`
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1.0;
+    }
+`
+const noneing = keyframes`
+    from {
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+`
 export default function Splash() {
     const text1Ref = useSpringRef();
     const text1Style = useAnimation(text1Ref);
     useChain([text1Ref]);
     return (
-        <SplashMain>
-            <Texting>
-                <animated.h1 style={text1Style}><Exceptions>W</Exceptions><Disappearing>hite</Disappearing>
-                    <Minusmargin>
-                        & B<Disappearing>lack</Disappearing>
-                    </Minusmargin>
-                </animated.h1>
-            </Texting>
-        </SplashMain>
+        <>
+            <SplashMain>
+                <Texting>
+                    <animated.h1 style={text1Style}><Exceptions>W</Exceptions><Disappearing>hite</Disappearing>
+                        <Minusmargin>
+                            & <Blacktext>B</Blacktext><Disappearingtwo>lack</Disappearingtwo>
+                        </Minusmargin>
+                    </animated.h1>
+                </Texting>
+                <Needle></Needle>
+            </SplashMain>
+        </>
     );
 }
+const Blacktext = styled.span`
+    color: black;
+`
+const Needle = styled.img.attrs({
+    src: `${logo}`
+})`
+    position: absolute;
+    width: 45vw;
+    height: auto;
+    margin-left: 28.3vw;
+    margin-top: 21vh;
+    z-index: 0;
+    opacity: 0;
+    animation: ${fadein} 2s 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+`;
 const Minusmargin = styled.span`
     animation: ${mining} 1s 1s;
     margin-left: 8vw;
@@ -69,8 +106,15 @@ const Disappearing = styled.span`
     animation-timing-function:ease-in-out;
     //애니메이션 끝나더라도 유지하깅
     animation-fill-mode: forwards;
+    color: black;
 `
-
+const Disappearingtwo = styled.span`
+    animation: ${deleteanimation} 1s 1s;
+    animation-timing-function:ease-in-out;
+    //애니메이션 끝나더라도 유지하깅
+    animation-fill-mode: forwards;
+    color: white;
+`
 const useAnimation = ref => {
     const spring = useSpring({
         from: {
@@ -94,6 +138,10 @@ const SplashMain = styled.div`
     height: 100%;
     background-color: black;
     z-index: 9999;
+    animation: ${noneing} 1s 3.5s;
+    animation-timing-function:ease-in-out;
+    animation-fill-mode: forwards;
+    
 `
 const Texting = styled.span`
     position: absolute;
@@ -108,4 +156,5 @@ const Texting = styled.span`
     animation-timing-function:ease-in-out;
     //애니메이션 끝나더라도 유지하깅
     animation-fill-mode: forwards;
+    z-index: 10;
 `
