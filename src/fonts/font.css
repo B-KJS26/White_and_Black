@@ -1,0 +1,41 @@
+@font-face {
+    font-family: "Jabberz";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./Jabberz.ttf");
+}
+
+@font-face {
+    font-family: "Stress";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./Stress.ttf");
+}
+
+@font-face {
+    font-family: "Readline";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./Readline.ttf");
+}
+
+@font-face {
+    font-family: "Beauty";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./Beauty.ttf");
+}
+
+@font-face {
+    font-family: "Bright";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./Bright.ttf");
+}
+
+@font-face {
+    font-family: "Cold";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./Cold.otf");
+}
