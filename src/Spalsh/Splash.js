@@ -152,6 +152,7 @@ const Texting = styled.span`
     font-family: 'Readline';
     color: #fff;
     text-shadow: 0 0 0px #f8f8ff, 0 0 0px #f8f8ff, 0 0 10px #f8f8ff, 0 0 70px #f8f8ff, 0 0 100px #f8f8ff;
+    -webkit-box-reflect: below -30vh -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.35, transparent), to(rgba(255, 255, 255, 1)));
     animation: ${wbanimation} 1s 1s;
     animation-timing-function:ease-in-out;
     //애니메이션 끝나더라도 유지하깅
