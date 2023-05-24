@@ -39,3 +39,24 @@
     font-weight: normal;
     src: url("./Cold.otf");
 }
+
+@font-face {
+    font-family: "TroyeS";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./Troye.ttf");
+}
+
+@font-face {
+    font-family: "TroyeSc";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./Tryoes.ttf");
+}
+
+@font-face {
+    font-family: "TroyeSe";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./Tryoese.ttf");
+}

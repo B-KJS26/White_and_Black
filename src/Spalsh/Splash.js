@@ -2,6 +2,7 @@ import React from 'react';
 import { useSpring, animated, useChain, useSpringRef } from "react-spring";
 import styled, { keyframes } from 'styled-components';
 import logo from '../images/light3.png';
+import Main from '../Main/Main';
 const deleteanimation = keyframes`
 	from {
         opacity: 1;
@@ -12,13 +13,13 @@ const deleteanimation = keyframes`
 `;
 const wbanimation = keyframes`
 	from {
-        margin-left: 5vw;
-        letter-spacing: 60px;
+        margin-left: 12vw;
+        letter-spacing: 1vw;
         animation-timing-function:ease-in-out;
     }
     to {
-        margin-left: 18vw;
-        letter-spacing: 10px;
+        margin-left: 22vw;
+        letter-spacing: 0.75vw;
         animation-timing-function:ease-in-out;
     }
 `;
@@ -26,7 +27,7 @@ const setposition = keyframes`
     from {
     }
     to{
-        margin-left: 15.5vw;
+        margin-left: 10.5vw;
     }
 `
 const mining = keyframes`
@@ -34,7 +35,7 @@ const mining = keyframes`
         margin-left: 8vw;
     }
     to {
-        margin-left: -7.5vw;
+        margin-left: -12vw;
     }
 `
 const fadein = keyframes`
@@ -70,11 +71,13 @@ export default function Splash() {
                 </Texting>
                 <Needle></Needle>
             </SplashMain>
+            <Main />
         </>
     );
 }
 const Blacktext = styled.span`
     color: black;
+    margin-left: 4.4vw;
 `
 const Needle = styled.img.attrs({
     src: `${logo}`
@@ -82,7 +85,7 @@ const Needle = styled.img.attrs({
     position: absolute;
     width: 45vw;
     height: auto;
-    margin-left: 28.3vw;
+    margin-left: 28.1vw;
     margin-top: 21vh;
     z-index: 0;
     opacity: 0;
@@ -145,14 +148,14 @@ const SplashMain = styled.div`
 `
 const Texting = styled.span`
     position: absolute;
-    margin-left: 5vw;
-    letter-spacing: 60px;
-    margin-top: 25vh;
-    font-size: 4.1vw;
-    font-family: 'Readline';
+    margin-left: 12vw;
+    letter-spacing: 1vw;
+    margin-top: 29vh;
+    font-size: 3vw;
+    font-family: 'TroyeSe';
     color: #fff;
     text-shadow: 0 0 0px #f8f8ff, 0 0 0px #f8f8ff, 0 0 10px #f8f8ff, 0 0 70px #f8f8ff, 0 0 100px #f8f8ff;
-    -webkit-box-reflect: below -30vh -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.35, transparent), to(rgba(255, 255, 255, 1)));
+    -webkit-box-reflect: below -21vh -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.35, transparent), to(rgba(255, 255, 255, 1)));
     animation: ${wbanimation} 1s 1s;
     animation-timing-function:ease-in-out;
     //애니메이션 끝나더라도 유지하깅
