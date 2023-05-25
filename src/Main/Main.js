@@ -18,7 +18,57 @@ const scroll = keyframes`
     10% { transform: translateY(0); opacity: 1; }
     100% { transform: translateY(25px); opacity: 0;}
 `
-
+const headerfade = keyframes`
+    0%{
+        margin-top: -30vh;
+    }
+    80% {
+        margin-top: 7vh;
+    }
+    100% {
+        margin-top: 2vh;
+    }
+`
+const leftandright = keyframes`
+    0%{
+        margin-left: -90vw;
+    }
+    100% {
+        margin-left: 0vw;
+    }
+`
+const right = keyframes`
+    0%{
+        margin-left: 200vw;
+    }
+    100% {
+        margin-left: 57vw;
+    }
+`
+const rightone = keyframes`
+    0%{
+        margin-left: 200vw;
+    }
+    100% {
+        margin-left: 65vw;
+    }
+`
+const righttwo = keyframes`
+    0%{
+        margin-left: 200vw;
+    }
+    100% {
+        margin-left: 70vw;
+    }
+`
+const fadeins = keyframes`
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+`
 export default function Main() {
     const secondform = useRef();  //특정 DOM을 가리킬 때 사용하는 Hook함수, SecondDiv에 적용
     const thirdform = useRef();
@@ -40,7 +90,7 @@ export default function Main() {
                 <Mainback />
                 <Groups>
                     <Groupname>W&B</Groupname>
-                    <Groupfullname>White and Black</Groupfullname>
+                    <Groupfullname>White and<br></br> Black</Groupfullname>
                     <Morebutton onClick={godown}>
                         <Texts>
                             More +
@@ -70,28 +120,37 @@ export default function Main() {
 const Matext = styled.h1`
     z-index: 5;
     font-size: 4vw;
-    margin-left: 65vw;
+    margin-left: 200vw;
     margin-top: 10vw;
     position: absolute;
     font-family: Troyes;
     color: white;
+    animation: ${rightone} 1s 5.2s;
+    animation-timing-function:ease-out;
+    animation-fill-mode: forwards;
 `
 const SubMa = styled.h1`
     z-index: 5;
     font-size: 3vw;
-    margin-left: 70vw;
+    margin-left: 200vw;
     margin-top: 14vw;
     position: absolute;
     font-family: Troyes;
     color: white;
+    animation: ${righttwo} 1s 5.4s;
+    animation-timing-function:ease-out;
+    animation-fill-mode: forwards;
 `
 const Mastery = styled.img.attrs({
     src: `${masterypic}`
 })`
     position: absolute;
-    margin-left: 57vw;
+    margin-left: 200vw;
     margin-top: 20vw;
     width: 35vw;
+    animation: ${right} 1s 5s;
+    animation-timing-function:ease-out;
+    animation-fill-mode: forwards;
 `
 const ThreeMain = styled.div`
     width: 100%;
@@ -137,10 +196,13 @@ const FirstText = styled.p`
 const Headers = styled.div`
     display: flex;
     position: absolute;
-    margin-top: 2vh;
+    margin-top: -30vh;
     width: 100%;
     height: 10vh;
     z-index: 1;
+    animation: ${headerfade} 1s 4.8s;
+    animation-timing-function:ease-in-out;
+    animation-fill-mode: forwards;
 `
 const Yo = styled.div`
     width: 100%;
@@ -174,6 +236,10 @@ const Scrolldenote = styled.div`
     width : 2vw;
     height: 8vh;
     cursor: pointer;
+    opacity: 0;
+    animation: ${fadeins} 1s 4.9s;
+    animation-timing-function:ease-out;
+    animation-fill-mode: forwards;
 `
 const TwoMain = styled.div`
     width: 100%;
@@ -194,11 +260,15 @@ const Texts = styled.p`
 const Morebutton = styled.div`
     width: 20vw;
     height: 5vw;
+    margin-left: -90vw;
     background-color: white;
     margin-top: -5vh;
     text-align: center;
     border-radius: 10px;
     cursor: pointer;
+    animation: ${leftandright} 1s 4.6s;
+    animation-timing-function:ease-out;
+    animation-fill-mode: forwards;
     &:hover {
         transform: scale(1.05);
         transition: all ease-in-out .5s;
@@ -211,21 +281,28 @@ const Groups = styled.div`
     width: 40vw;
     height: 50vh;
     margin-top: 17vh;
-    
 `
 const Groupfullname = styled.p`
     margin-top: -5vh;
+    margin-left: -90vw;
     font-size: 5vw;
     font-family: 'TroyeS';
     font-weight: bold;
     color: white;
     text-shadow: 0px 0px 40px rgba(255, 255, 255, 1);
+    animation: ${leftandright} 1s 4.2s;
+    animation-timing-function:ease-in-out;
+    animation-fill-mode: forwards;
 `
 const Groupname = styled.p`
     font-size: 3.5vw;
+    margin-left: -90vw;
     font-family: 'TroyeS';
     font-weight: bold;
     color: white;
+    animation: ${leftandright} 1s 4.4s;
+    animation-timing-function:ease-in-out;
+    animation-fill-mode: forwards;
 `
 const Mainback = styled.div`
     position: absolute;
