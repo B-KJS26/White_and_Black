@@ -60,3 +60,31 @@
     font-weight: normal;
     src: url("./Tryoese.ttf");
 }
+
+@font-face {
+    font-family: "Pcbold";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./Pcbold.ttf");
+}
+
+@font-face {
+    font-family: "Pcpbold";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./Pcpbold.ttf");
+}
+
+@font-face {
+    font-family: "Pcpre";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./Pcpre.ttf");
+}
+
+@font-face {
+    font-family: "Pcre";
+    font-style: normal;
+    font-weight: normal;
+    src: url("./Pcre.ttf");
+}

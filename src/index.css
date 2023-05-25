@@ -5,7 +5,24 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  animation: fadeoutings 1s 3.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
+
+@keyframes fadeoutings {
+  from {
+    overflow: hidden;
+  }
+
+  to {
+    overflow: scroll;
+  }
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

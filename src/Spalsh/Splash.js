@@ -55,6 +55,15 @@ const noneing = keyframes`
         visibility: hidden;
     }
 `
+const faut = keyframes`
+    from {
+        visibility: hidden;
+        
+    }
+    to {
+        visibility: visible;
+    }
+`;
 export default function Splash() {
     const text1Ref = useSpringRef();
     const text1Style = useAnimation(text1Ref);
@@ -71,10 +80,20 @@ export default function Splash() {
                 </Texting>
                 <Needle></Needle>
             </SplashMain>
-            <Main />
+            <RealMain>
+                <Main />
+            </RealMain>
         </>
     );
 }
+const RealMain = styled.div`
+    visibility: hidden;
+    overflow: hidden;
+        touch-action: none;
+    animation: ${faut} 1s 3.8s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+`
 const Blacktext = styled.span`
     color: black;
     margin-left: 4.4vw;

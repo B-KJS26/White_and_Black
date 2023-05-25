@@ -1,7 +1,9 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import bg from '../images/background.jpg';
-import Header from './Header/Header';
+import { useRef } from 'react';
+import About from '../pages/About';
+import Members from '../pages/Member';
 const create = keyframes`
     from {
         opacity: 0;
@@ -10,37 +12,146 @@ const create = keyframes`
         opacity: 1;
     }
 `
+const scroll = keyframes`
+    0% { opacity: 0; }
+    10% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(25px); opacity: 0;}
+`
+
 export default function Main() {
+    const secondform = useRef();  //특정 DOM을 가리킬 때 사용하는 Hook함수, SecondDiv에 적용
+    const thirdform = useRef();
+    //Twomain으로 이동
+    const godown = () => {
+        secondform.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+    const gomember = () => {
+        thirdform.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
     return (
-        <>
+        <Yo>
             <Mainbg>
-                <Header />
+                <Headers>
+                    <FirstText onClick={godown}>About us</FirstText>
+                    <Line>I</Line>
+                    <SeoncdText on onClick={gomember}>Members</SeoncdText>
+                </Headers>
                 <Mainback />
                 <Groups>
                     <Groupname>W&B</Groupname>
                     <Groupfullname>White and Black</Groupfullname>
-                    <Morebutton>
+                    <Morebutton onClick={godown}>
                         <Texts>
                             More +
                         </Texts>
                     </Morebutton>
                 </Groups>
+                <Scrolldenote onClick={godown}>
+                    <Mousey>
+                        <Scroller></Scroller>
+                    </Mousey>
+                </Scrolldenote>
             </Mainbg>
-            <TwoMain>
-
+            <TwoMain ref={secondform}>
+                <About />
             </TwoMain>
-        </>
+            <ThreeMain ref={thirdform}>
+                <Members />
+            </ThreeMain>
+        </Yo>
     );
 }
-const TwoMain = styled.div`
-    position: absolute;
+
+const ThreeMain = styled.div`
     width: 100%;
-    height: 100%;
-    background-color: yellow;
-    margin-top: 100vh;
+    height: 100vh;
+    overflow: hidden;
+    -ms-overflow-style:none;
+    scrollbar-width:none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+`
+const SeoncdText = styled.p`
+    font-size: 1.5vw;
+    font-family: 'TroyeS';
+    margin-left: 3vw;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.1);
+        transition: all ease .5s;
+    }
+`
+const Line = styled.p`
+    font-size: 1.5vw;
+    font-family: 'TroyeS';
+    margin-left: 3vw;
+    font-weight: 600;
+    color: white;
+`
+const FirstText = styled.p`
+    font-size: 1.5vw;
+    font-family: 'TroyeS';
+    margin-left: 3.5vw;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.1);
+        transition: all ease .5s;
+    }
+`
+const Headers = styled.div`
+    display: flex;
+    position: absolute;
+    margin-top: 2vh;
+    width: 100%;
+    height: 10vh;
+    z-index: 1;
+`
+const Yo = styled.div`
+    width: 100%;
+    height: 300vh;
+    overflow: hidden;
+`
+const Scroller = styled.div`
+    width: 0.3vw;
+    height: 1vh;
+    border-radius: 25%;
+    background-color: #fff;
+    animation: ${scroll};
+    animation-duration: 2.2s;
+    animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+    animation-iteration-count: infinite;
+`
+const Mousey = styled.div`
+    width: 0.3vw;
+    padding: 10px 15px;
+    height: 35px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    opacity: 0.75;
+    box-sizing: content-box;
+`
+const Scrolldenote = styled.div`
+    position: absolute;
+    margin-left: 50%;
+    margin-top: 88vh;
+    transform: translateX(-50%);
+    width : 2vw;
+    height: 8vh;
+    cursor: pointer;
+`
+const TwoMain = styled.div`
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
 `
 const Texts = styled.p`
-    padding-top: 1.8vh;
+    padding-top: 0.9vw;
     font-family: TroyeS;
     font-weight: bold;
     font-size: 2vw;
@@ -51,9 +162,10 @@ const Texts = styled.p`
 `
 const Morebutton = styled.div`
     width: 20vw;
-    height: 10vh;
+    height: 5vw;
     background-color: white;
     margin-top: -5vh;
+    text-align: center;
     border-radius: 10px;
     cursor: pointer;
     &:hover {
@@ -62,11 +174,12 @@ const Morebutton = styled.div`
     }
 `
 const Groups = styled.div`
+    display: block;
     position: absolute;
     margin-left: 3.5vw;
     width: 40vw;
     height: 50vh;
-    margin-top: 20vh;
+    margin-top: 17vh;
     
 `
 const Groupfullname = styled.p`
@@ -93,9 +206,8 @@ const Mainback = styled.div`
     filter: blur(3.5px);
 `
 const Mainbg = styled.div`
-    position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: gray;
     animation: ${create} 1s 3.5s;
     animation-timing-function:ease-in-out;
