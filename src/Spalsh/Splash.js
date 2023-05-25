@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSpring, animated, useChain, useSpringRef } from "react-spring";
 import styled, { keyframes } from 'styled-components';
-import logo from '../images/light3.png';
+import logo from '../images/light.png';
 import Main from '../Main/Main';
 const deleteanimation = keyframes`
 	from {
