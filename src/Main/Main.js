@@ -4,6 +4,7 @@ import bg from '../images/background.jpg';
 import { useRef } from 'react';
 import About from '../pages/About';
 import Members from '../pages/Member';
+import masterypic from '../images/mastery.png'
 const create = keyframes`
     from {
         opacity: 0;
@@ -51,6 +52,10 @@ export default function Main() {
                         <Scroller></Scroller>
                     </Mousey>
                 </Scrolldenote>
+                <Matext>DOHWA</Matext>
+                <SubMa>W&B MASTER</SubMa>
+                <Mastery>
+                </Mastery>
             </Mainbg>
             <TwoMain ref={secondform}>
                 <About />
@@ -62,6 +67,32 @@ export default function Main() {
     );
 }
 
+const Matext = styled.h1`
+    z-index: 5;
+    font-size: 4vw;
+    margin-left: 65vw;
+    margin-top: 10vw;
+    position: absolute;
+    font-family: Troyes;
+    color: white;
+`
+const SubMa = styled.h1`
+    z-index: 5;
+    font-size: 3vw;
+    margin-left: 70vw;
+    margin-top: 14vw;
+    position: absolute;
+    font-family: Troyes;
+    color: white;
+`
+const Mastery = styled.img.attrs({
+    src: `${masterypic}`
+})`
+    position: absolute;
+    margin-left: 57vw;
+    margin-top: 20vw;
+    width: 35vw;
+`
 const ThreeMain = styled.div`
     width: 100%;
     height: 100vh;

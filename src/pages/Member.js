@@ -7,7 +7,6 @@ import master from '../images/dohwa.png';
 import effect from '../images/effect.png';
 import effectwo from '../images/effect2.png';
 import effecthree from '../images/fire.png';
-import bg from '../images/background.png';
 import ruyeonss from '../images/ruyeonss.png';
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const styles = {
@@ -38,7 +37,7 @@ export default function Members() {
                         <BlackLine></BlackLine>
                     </Information>
                     <Middle>
-                        <Express>W팀 소속이다.</Express>
+                        <Express>W팀 소속</Express>
                     </Middle>
                     <Profile>
                     </Profile>
@@ -53,7 +52,7 @@ export default function Members() {
                             <Identitytwo>Master</Identitytwo>
                         </Name>
                         <WhiteLine></WhiteLine>
-                        <Expresstwo>W&B의 마스터이다.</Expresstwo>
+                        <Expresstwo>W&B의 마스터</Expresstwo>
                         <Profiletwo>
                         </Profiletwo>
                         <Effectwo>
@@ -72,7 +71,7 @@ export default function Members() {
                         </Name>
                     </Informationthree>
                     <Middletwo>
-                        <Expressthree>B팀 소속이다.</Expressthree>
+                        <Expressthree>B팀 소속</Expressthree>
                     </Middletwo>
                     <Profilethree>
                     </Profilethree>
